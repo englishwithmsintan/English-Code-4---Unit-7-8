@@ -67,6 +67,15 @@ export default function App() {
   // Classroom team scores for presentation
   const [teamScores, setTeamScores] = useState<ClassroomScores>({ teamA: 0, teamB: 0 });
 
+  // Header collapsed/expanded state for presentation view size
+  const [isHeaderCollapsed, setIsHeaderCollapsed] = useState<boolean>(() => {
+    try {
+      return localStorage.getItem('tunas_iblam_header_collapsed') === 'true';
+    } catch {
+      return false;
+    }
+  });
+
   // Sync state to local storage
   useEffect(() => {
     try {
@@ -83,6 +92,14 @@ export default function App() {
       console.warn('LocalStorage save failed', e);
     }
   }, [genAlphaMode]);
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('tunas_iblam_header_collapsed', String(isHeaderCollapsed));
+    } catch (e) {
+      console.warn('LocalStorage save failed', e);
+    }
+  }, [isHeaderCollapsed]);
 
   const handleMarkReviewed = (cardId: string, unit: 7 | 8, mastered: boolean) => {
     setProgress(prev => {
@@ -210,6 +227,8 @@ export default function App() {
         masteryPercentage={masteryPercent}
         genAlphaMode={genAlphaMode}
         setGenAlphaMode={setGenAlphaMode}
+        isHeaderCollapsed={isHeaderCollapsed}
+        setIsHeaderCollapsed={setIsHeaderCollapsed}
       />
 
       {/* Main Review Hub tab selector router */}
@@ -261,7 +280,7 @@ export default function App() {
                           <p className="text-2xl font-black text-slate-955 mt-1">{teamScores.teamA}</p>
                         </div>
                         <div className="bg-rose-100 border-2 border-slate-900 p-2 rounded-xl">
-                          <p className="text-[10px] text-slate-700 font-extrabold uppercase font-mono">TEAM BETA</p>
+                          <p className="text-[10px] text-slate-700 font-extrabold uppercase font-mono">TEAM SIGMA</p>
                           <p className="text-2xl font-black text-slate-955 mt-1">{teamScores.teamB}</p>
                         </div>
                       </div>

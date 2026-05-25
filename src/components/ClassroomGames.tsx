@@ -401,7 +401,7 @@ export default function ClassroomGames({
               {teamScores.teamB > teamScores.teamA && (
                 <span className="absolute -top-2.5 right-1 text-xs animate-bounce" title="Leading Team!">👑</span>
               )}
-              <p className="text-[10px] uppercase font-mono font-black text-rose-850">BETA TEAM</p>
+              <p className="text-[10px] uppercase font-mono font-black text-rose-850">SIGMA TEAM</p>
               <p className="text-2xl font-black font-mono mt-1 text-slate-900">{teamScores.teamB}</p>
               <div className="flex justify-center gap-1.5 mt-2">
                 <button onClick={() => awardPoint('B', 1)} className="px-2 py-0.5 rounded border border-slate-900 bg-white text-slate-950 text-xs font-black font-mono cursor-pointer shadow-[1px_1px_0px_0px_#000] active:translate-y-[1px] active:shadow-none">+1</button>
@@ -504,7 +504,7 @@ export default function ClassroomGames({
                           <p className="text-[10px] uppercase font-mono font-black text-amber-300 tracking-wider">AWARD POINT FOR COMPLETED CLAUSE:</p>
                           <div className="flex gap-2 mt-2">
                             <button onClick={(e) => { e.stopPropagation(); awardPoint('A', 1); }} className="flex-1 py-1.5 text-xs font-black uppercase font-mono bg-black/40 hover:bg-black/80 text-white border border-white/30 rounded cursor-pointer transition active:translate-y-[1px]">+1 Alpha</button>
-                            <button onClick={(e) => { e.stopPropagation(); awardPoint('B', 1); }} className="flex-1 py-1.5 text-xs font-black uppercase font-mono bg-black/40 hover:bg-black/80 text-white border border-white/30 rounded cursor-pointer transition active:translate-y-[1px]">+1 Beta</button>
+                            <button onClick={(e) => { e.stopPropagation(); awardPoint('B', 1); }} className="flex-1 py-1.5 text-xs font-black uppercase font-mono bg-black/40 hover:bg-black/80 text-white border border-white/30 rounded cursor-pointer transition active:translate-y-[1px]">+1 Sigma</button>
                           </div>
                         </div>
                       </motion.div>
@@ -623,7 +623,7 @@ export default function ClassroomGames({
                         <p className="text-[10px] uppercase font-mono font-black text-indigo-650 mb-1.5">Award survival point to team:</p>
                         <div className="flex gap-2 justify-center">
                           <button onClick={() => awardPoint('A', 1)} className="px-3 py-1 bg-teal-100 hover:bg-teal-200 text-teal-800 text-[10px] font-black font-mono border border-slate-900 rounded cursor-pointer shadow-[1px_1px_0px_0px_#000] active:translate-y-[1px] active:shadow-none">+1 Alpha</button>
-                          <button onClick={() => awardPoint('B', 1)} className="px-3 py-1 bg-rose-100 hover:bg-rose-200 text-rose-800 text-[10px] font-black font-mono border border-slate-900 rounded cursor-pointer shadow-[1px_1px_0px_0px_#000] active:translate-y-[1px] active:shadow-none">+1 Beta</button>
+                          <button onClick={() => awardPoint('B', 1)} className="px-3 py-1 bg-rose-100 hover:bg-rose-200 text-rose-800 text-[10px] font-black font-mono border border-slate-900 rounded cursor-pointer shadow-[1px_1px_0px_0px_#000] active:translate-y-[1px] active:shadow-none">+1 Sigma</button>
                         </div>
                       </div>
                     </div>
@@ -734,7 +734,7 @@ export default function ClassroomGames({
                   <span className="text-[10px] font-black uppercase tracking-wider text-slate-500 font-mono">Award point to quickest correct answer:</span>
                   <div className="flex gap-2">
                     <button onClick={() => awardPoint('A', 1)} className="px-3 py-1 bg-teal-100 hover:bg-teal-200 text-teal-850 text-[10px] font-black font-mono border border-slate-900 rounded-lg cursor-pointer shadow-[1px_1px_0px_0px_#000] active:translate-y-[1px] active:shadow-none">+1 Alpha</button>
-                    <button onClick={() => awardPoint('B', 1)} className="px-3 py-1 bg-rose-100 hover:bg-rose-200 text-rose-850 text-[10px] font-black font-mono border border-slate-900 rounded-lg cursor-pointer shadow-[1px_1px_0px_0px_#000] active:translate-y-[1px] active:shadow-none">+1 Beta</button>
+                    <button onClick={() => awardPoint('B', 1)} className="px-3 py-1 bg-rose-100 hover:bg-rose-200 text-rose-855 text-rose-850 text-[10px] font-black font-mono border border-slate-900 rounded-lg cursor-pointer shadow-[1px_1px_0px_0px_#000] active:translate-y-[1px] active:shadow-none">+1 Sigma</button>
                   </div>
                 </div>
               </div>
@@ -854,7 +854,7 @@ export default function ClassroomGames({
                     <p className="text-[10px] uppercase font-mono font-black text-slate-650">Award point directly to team:</p>
                     <div className="flex gap-2 w-full">
                       <button onClick={() => awardPoint('A', 1)} className="flex-1 py-1 px-2.5 bg-teal-105 bg-teal-100 hover:bg-teal-200 text-teal-800 text-[10px] font-black font-mono border border-slate-900 rounded shadow-[1px_1px_0px_0px_#000] cursor-pointer active:translate-y-[1px] active:shadow-none">+1 Alpha</button>
-                      <button onClick={() => awardPoint('B', 1)} className="flex-1 py-1 px-2.5 bg-rose-105 bg-rose-100 hover:bg-rose-200 text-rose-800 text-[10px] font-black font-mono border border-slate-900 rounded shadow-[1px_1px_0px_0px_#000] cursor-pointer active:translate-y-[1px] active:shadow-none">+1 Beta</button>
+                      <button onClick={() => awardPoint('B', 1)} className="flex-1 py-1 px-2.5 bg-rose-105 bg-rose-100 hover:bg-rose-200 text-rose-800 text-[10px] font-black font-mono border border-slate-900 rounded shadow-[1px_1px_0px_0px_#000] cursor-pointer active:translate-y-[1px] active:shadow-none">+1 Sigma</button>
                     </div>
                   </div>
                 </div>
@@ -961,7 +961,7 @@ export default function ClassroomGames({
                       <p className="text-[10px] uppercase font-mono font-black text-[#6366f1] mb-1.5">Award sentence points to team:</p>
                       <div className="flex gap-2 justify-center">
                         <button onClick={() => awardPoint('A', 1)} className="px-3 py-1 bg-teal-100 hover:bg-teal-200 text-teal-850 text-[10px] font-black font-mono border border-slate-900 rounded cursor-pointer shadow-[1px_1px_0px_0px_#000] active:translate-y-[1px] active:shadow-none">+1 Alpha</button>
-                        <button onClick={() => awardPoint('B', 1)} className="px-3 py-1 bg-rose-100 hover:bg-rose-200 text-rose-850 text-[10px] font-black font-mono border border-slate-900 rounded cursor-pointer shadow-[1px_1px_0px_0px_#000] active:translate-y-[1px] active:shadow-none">+1 Beta</button>
+                        <button onClick={() => awardPoint('B', 1)} className="px-3 py-1 bg-rose-100 hover:bg-rose-200 text-rose-850 text-[10px] font-black font-mono border border-slate-900 rounded cursor-pointer shadow-[1px_1px_0px_0px_#000] active:translate-y-[1px] active:shadow-none">+1 Sigma</button>
                       </div>
                     </div>
                   </div>
