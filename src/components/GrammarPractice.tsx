@@ -38,7 +38,7 @@ export default function GrammarPractice({
   const [infinitiveSelectedVerb, setInfinitiveSelectedVerb] = useState('');
   const [infinitiveSelectedPurpose, setInfinitiveSelectedPurpose] = useState('');
   const [infinitiveVerbsPoll, setInfinitiveVerbsPoll] = useState(['to check', 'to feel', 'to fix', 'to see', 'to make']);
-  const [infinitivePurposePoll, setInfinitivePurposePoll] = useState(['the fever.', 'better.', 'his tooth.', 'our teeth.', 'patients feel better.']);
+  const [infinitivePurposePoll, setInfinitivePurposePoll] = useState(['the fever', 'better', 'his tooth', 'our teeth', 'patients feel better']);
   const [infinitiveMatchesSolved, setInfinitiveMatchesSolved] = useState<number>(0);
   const [infinitiveErrors, setInfinitiveErrors] = useState(0);
   const [infinitiveCompletedState, setInfinitiveCompletedState] = useState(false);
@@ -265,43 +265,76 @@ export default function GrammarPractice({
           >
             <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center border-b-2 border-slate-200 pb-4 mb-6 gap-3">
               <div>
-                <span className="text-xs font-black text-indigo-650 uppercase tracking-widest font-mono">Topic: Infinitive of Purpose (to + verb)</span>
-                <h3 className="text-xl font-black text-slate-950 mt-1 uppercase tracking-tight">Infinitive Connector: Link the Sentence</h3>
+                <span className="text-sm font-black text-indigo-655 text-indigo-600 uppercase tracking-widest font-mono">Topic: Infinitive of Purpose (to + verb)</span>
+                <h3 className="text-2xl font-black text-slate-905 mt-1 uppercase tracking-tight">Infinitive Connector: Link the Sentence</h3>
               </div>
-              <div className="bg-amber-300 border-2 border-slate-900 rounded-xl px-4 py-1.5 font-mono text-xs font-black text-slate-950 shadow-[2px_2px_0px_0px_#0f172a]">
+              <div className="bg-amber-300 border-2 border-slate-900 rounded-xl px-4 py-2 font-mono text-sm font-black text-slate-950 shadow-[2px_2px_0px_0px_#0f172a]">
                 <span>STAGE: {infinitiveMatchesSolved} / {INFINITIVE_PAIRS.length}</span>
               </div>
             </div>
 
             {!infinitiveCompletedState && infinitiveMatchesSolved < INFINITIVE_PAIRS.length ? (
               <div>
-                <div className="bg-amber-100 border-2 border-slate-900 rounded-2xl p-4 sm:p-5 mb-6 shadow-[2px_2px_0px_0px_#0f172a]">
-                  <span className="text-[10px] font-black tracking-widest text-amber-800 uppercase font-mono mb-2 block">GRAMMAR CONTEXT FORMULA</span>
+                {/* Visual Formula Header */}
+                <div className="bg-amber-50 border-2 border-slate-900 rounded-2xl p-5 mb-6 shadow-[2px_2px_0px_0px_#0f172a]">
+                  <span className="text-xs font-black tracking-widest text-amber-800 uppercase font-mono mb-2 block text-center sm:text-left">💡 GRAMMAR CONTEXT FORMULA</span>
                   <div className="flex flex-col sm:flex-row items-center justify-around gap-2 text-center">
-                    <span className="px-2.5 py-1 bg-white border-2 border-slate-900 text-slate-800 text-xs font-black rounded-lg leading-none">Main Action Statement</span>
-                    <span className="text-sm font-bold text-slate-900">+</span>
-                    <span className="px-2.5 py-1 bg-rose-400 border-2 border-slate-900 text-slate-950 text-xs font-black rounded-lg leading-none">to + Verb (Purpose)</span>
-                    <span className="text-sm font-bold text-slate-900">+</span>
-                    <span className="px-2.5 py-1 bg-cyan-300 border-2 border-slate-900 text-slate-950 text-xs font-black rounded-lg leading-none">Reason Object</span>
+                    <span className="px-3.5 py-1.5 bg-white border-2 border-slate-900 text-slate-800 text-sm font-black rounded-lg leading-none">Main Action Statement</span>
+                    <span className="text-lg font-bold text-slate-900">+</span>
+                    <span className="px-3.5 py-1.5 bg-rose-400 border-2 border-slate-900 text-slate-950 text-sm font-black rounded-lg leading-none">to + Verb (Purpose)</span>
+                    <span className="text-lg font-bold text-slate-900">+</span>
+                    <span className="px-3.5 py-1.5 bg-cyan-300 border-2 border-slate-900 text-slate-950 text-sm font-black rounded-lg leading-none">Reason Object</span>
                   </div>
                 </div>
 
-                <div className="text-center mb-6 py-6 bg-slate-100 border-2 border-slate-900 rounded-2xl text-slate-800 flex flex-col items-center shadow-[2px_2px_0px_0px_#000]">
-                  <span className="text-xs uppercase font-black text-slate-500 font-mono tracking-widest">MAIN ACTION TO PARTNER:</span>
-                  <span className="text-xl sm:text-2xl md:text-3xl font-black text-slate-950 mt-2 font-sans px-6 leading-relaxed">
-                    "{INFINITIVE_PAIRS[infinitiveStep].sentence} ... ________________"
-                  </span>
+                {/* DYNAMIC PRESENTATION-FRIENDLY SENTENCE BUILDER */}
+                <div className="bg-[#fefaf0] border-4 border-slate-900 rounded-[28px] p-6 sm:p-10 mb-8 text-center shadow-[4px_4px_0px_0px_#0f172a] relative overflow-hidden">
+                  <div className="absolute top-2 left-4 text-[10px] font-black tracking-wider text-slate-400 font-mono">🖥️ LIVE SENTENCE BUILDER</div>
+                  
+                  <div className="text-2xl sm:text-3xl md:text-4xl font-black text-slate-950 leading-relaxed font-sans max-w-4xl mx-auto flex flex-wrap justify-center items-center gap-x-4 gap-y-5 py-2">
+                    <span className="text-slate-900 font-bold">{INFINITIVE_PAIRS[infinitiveStep].sentence}</span>
+                    
+                    {infinitiveSelectedVerb ? (
+                      <motion.span 
+                        initial={{ scale: 0.9, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        className="inline-block px-5 py-2.5 bg-rose-400 border-3 border-slate-900 rounded-2xl text-slate-950 font-black shadow-[2px_2px_0px_0px_#000] select-none"
+                      >
+                        {infinitiveSelectedVerb}
+                      </motion.span>
+                    ) : (
+                      <span className="inline-block px-6 py-2.5 bg-rose-50 border-3 border-dashed border-rose-300 text-rose-300 font-extrabold rounded-2xl animate-pulse min-w-[160px] text-center text-xl select-none">
+                        (to + Verb)
+                      </span>
+                    )}
+
+                    {infinitiveSelectedPurpose ? (
+                      <motion.span 
+                        initial={{ scale: 0.9, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        className="inline-block px-5 py-2.5 bg-[#5f52ee] border-3 border-slate-900 rounded-2xl text-white font-black shadow-[2px_2px_0px_0px_#000] select-none"
+                      >
+                        {infinitiveSelectedPurpose}
+                      </motion.span>
+                    ) : (
+                      <span className="inline-block px-6 py-2.5 bg-indigo-50 border-3 border-dashed border-indigo-200 text-indigo-300 font-extrabold rounded-2xl animate-pulse min-w-[180px] text-center text-xl select-none">
+                        (Reason)
+                      </span>
+                    )}
+
+                    <span className="text-slate-900 font-bold">.</span>
+                  </div>
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                   
                   {/* Step A: Choose the "to + verb" */}
-                  <div className="bg-[#fefaf0] border-2 border-slate-900 p-5 rounded-2xl shadow-[2px_2px_0px_0px_#0f172a]">
-                    <h4 className="text-sm font-black uppercase tracking-widest text-slate-500 mb-3.5 flex items-center gap-1.5">
+                  <div className="bg-slate-50 border-2 border-slate-900 p-5 rounded-2xl shadow-[2px_2px_0px_0px_#0f172a]">
+                    <h4 className="text-sm font-black uppercase tracking-widest text-slate-500 mb-4 flex items-center gap-1.5">
                       <span className="inline-block px-2.5 py-1 rounded bg-rose-400 border border-slate-900 text-slate-950 text-xs leading-none font-black font-mono">STEP 1</span> Choose Connector Verb
                     </h4>
                     
-                    <div className="flex flex-col gap-2.5">
+                    <div className="flex flex-col gap-3">
                       {infinitiveVerbsPoll.map((verb) => {
                         const isSelected = infinitiveSelectedVerb === verb;
                         return (
@@ -313,10 +346,10 @@ export default function GrammarPractice({
                               setInfinitiveAlertActive(false);
                               sound.playClick();
                             }}
-                            className={`p-4 text-left rounded-xl text-sm sm:text-base font-black border-2 transition-all cursor-pointer shadow-[2px_2px_0px_0px_#0f172a] ${
+                            className={`p-4 text-left rounded-xl text-base sm:text-lg font-black border-2 transition-all cursor-pointer shadow-[2px_2px_0px_0px_#0f172a] ${
                               isSelected
-                                ? 'bg-rose-400 border-slate-900 text-slate-950 scale-98 translate-y-[1px] shadow-none'
-                                : 'bg-white border-slate-900 text-slate-705 hover:bg-slate-50'
+                                ? 'bg-rose-400 border-slate-900 text-slate-950 scale-[0.98] translate-y-[1px] shadow-none'
+                                : 'bg-white border-slate-900 text-slate-705 hover:bg-slate-100'
                             }`}
                           >
                             {verb}
@@ -327,12 +360,12 @@ export default function GrammarPractice({
                   </div>
 
                   {/* Step B: Choose the "Reason" */}
-                  <div className="bg-[#fefaf0] border-2 border-slate-900 p-5 rounded-2xl shadow-[2px_2px_0px_0px_#0f172a]">
-                    <h4 className="text-sm font-black uppercase tracking-widest text-slate-500 mb-3.5 flex items-center gap-1.5">
+                  <div className="bg-slate-50 border-2 border-slate-900 p-5 rounded-2xl shadow-[2px_2px_0px_0px_#0f172a]">
+                    <h4 className="text-sm font-black uppercase tracking-widest text-slate-500 mb-4 flex items-center gap-1.5">
                       <span className="inline-block px-2.5 py-1 rounded bg-indigo-400 border border-slate-900 text-white text-xs leading-none font-black font-mono">STEP 2</span> Choose Target Reason
                     </h4>
                     
-                    <div className="flex flex-col gap-2.5">
+                    <div className="flex flex-col gap-3">
                       {infinitivePurposePoll.map((purp) => {
                         const isSelected = infinitiveSelectedPurpose === purp;
                         return (
@@ -344,10 +377,10 @@ export default function GrammarPractice({
                               setInfinitiveAlertActive(false);
                               sound.playClick();
                             }}
-                            className={`p-4 text-left rounded-xl text-sm sm:text-base font-black border-2 transition-all cursor-pointer shadow-[2px_2px_0px_0px_#0f172a] ${
+                            className={`p-4 text-left rounded-xl text-base sm:text-lg font-black border-2 transition-all cursor-pointer shadow-[2px_2px_0px_0px_#0f172a] ${
                               isSelected
-                                ? 'bg-[#5f52ee] border-slate-900 text-white scale-98 translate-y-[1px] shadow-none'
-                                : 'bg-white border-slate-900 text-slate-705 hover:bg-slate-50'
+                                ? 'bg-[#5f52ee] border-slate-900 text-white scale-[0.98] translate-y-[1px] shadow-none'
+                                : 'bg-white border-slate-900 text-slate-705 hover:bg-slate-100'
                             }`}
                           >
                             {purp}
@@ -360,12 +393,12 @@ export default function GrammarPractice({
 
                 {/* Matching Warning Banner */}
                 {infinitiveAlertActive && (
-                  <div className="mt-4 p-4 bg-rose-100 border-2 border-slate-900 rounded-xl text-xs font-semibold text-rose-800 flex items-center gap-2 animate-bounce-slow">
-                    <AlertTriangle className="h-5 w-5 text-rose-600 shrink-0" />
+                  <div className="mt-6 p-5 bg-rose-100 border-2 border-slate-900 rounded-xl text-sm font-extrabold text-rose-800 flex items-center gap-2 animate-bounce-slow">
+                    <AlertTriangle className="h-6 w-6 text-rose-600 shrink-0" />
                     <span>
                       {genAlphaMode
                         ? "💀 OHIO VIBES! That link is absolute cap, bro! Review spelling pairings and lock in, fr fr!"
-                        : "Whoops! That link is not grammatically correct. Check spelling pairs and try again!"}
+                        : "Whoops! That connector or reason does not fit grammatically! Check spelling pairs and try again!"}
                     </span>
                   </div>
                 )}
@@ -376,7 +409,14 @@ export default function GrammarPractice({
                   disabled={!infinitiveSelectedVerb || !infinitiveSelectedPurpose}
                   onClick={() => {
                     const target = INFINITIVE_PAIRS[infinitiveStep];
-                    if (infinitiveSelectedVerb === target.verb && infinitiveSelectedPurpose === target.purpose) {
+                    
+                    // Strip and clean strings for complete bulletproof logic
+                    const cleanSelected = infinitiveSelectedPurpose.trim().replace(/\.$/, '').toLowerCase();
+                    const cleanTarget = target.purpose.trim().replace(/\.$/, '').toLowerCase();
+                    const cleanVerbSelected = infinitiveSelectedVerb.trim().toLowerCase();
+                    const cleanVerbTarget = target.verb.trim().toLowerCase();
+
+                    if (cleanVerbSelected === cleanVerbTarget && cleanSelected === cleanTarget) {
                       setInfinitiveMatchesSolved(s => s + 1);
                       sound.playCorrect();
                       setInfinitiveAlertActive(false);
@@ -397,20 +437,20 @@ export default function GrammarPractice({
                       setInfinitiveAlertActive(true);
                     }
                   }}
-                  className={`w-full mt-4 py-3.5 px-6 rounded-2xl font-black text-xs uppercase tracking-wider cursor-pointer transition flex items-center justify-center gap-2 border-2 ${
+                  className={`w-full mt-6 py-4 px-6 rounded-2xl font-black text-sm uppercase tracking-wider cursor-pointer transition flex items-center justify-center gap-2 border-2 ${
                     infinitiveSelectedVerb && infinitiveSelectedPurpose
                       ? 'bg-[#8b5cf6] border-slate-900 hover:bg-[#7c3aed] text-white shadow-[4px_4px_0px_0px_#0f172a] active:translate-y-[2px] active:shadow-none'
                       : 'bg-slate-100 text-slate-400 border-slate-350 cursor-not-allowed'
                   }`}
                 >
-                  <ArrowRight className="h-4.5 w-4.5" /> Link Sentence Components!
+                  <ArrowRight className="h-5 w-5" /> Link Sentence Components!
                 </button>
               </div>
             ) : (
               <div className="text-center py-6">
                 <div className="inline-block p-4 rounded-xl bg-indigo-600 text-white border-2 border-slate-900 shadow-[2px_2px_0px_0px_#000] mb-4 text-3xl">🖇️</div>
-                <h4 className="text-xl font-black text-slate-900 uppercase">Infinitive Connectors Complete!</h4>
-                <p className="text-xs text-gray-600 mt-2 max-w-sm mx-auto font-bold">
+                <h4 className="text-2xl font-black text-slate-900 uppercase">Infinitive Connectors Complete!</h4>
+                <p className="text-sm text-gray-650 mt-2 max-w-sm mx-auto font-bold text-gray-600">
                   You successfully constructed all {INFINITIVE_PAIRS.length} health purpose sentences!
                 </p>
                 <div className="mt-6 bg-[#fefaf0] border-2 border-slate-900 p-4 rounded-2xl shadow-[3px_3px_0px_0px_#0f172a] inline-block">
