@@ -347,7 +347,13 @@ export default function FlashcardModule({
                 </div>
 
                 <div className="flex-1 flex flex-col justify-center items-center text-center py-4">
-                  <h3 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black tracking-tight text-slate-950 uppercase font-sans select-none">
+                  <h3 className={`font-black tracking-tight text-slate-950 uppercase font-sans select-none leading-tight ${
+                    activeCard.word.length > 18
+                      ? 'text-2xl sm:text-3xl md:text-4xl lg:text-5xl'
+                      : activeCard.word.length > 12
+                      ? 'text-3xl sm:text-4xl md:text-5xl lg:text-6xl'
+                      : 'text-4xl sm:text-5xl md:text-7xl lg:text-8xl'
+                  }`}>
                     {activeCard.word}
                   </h3>
                   {genAlphaMode && ALPHAZ_LINGO[activeCard.word] && (

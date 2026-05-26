@@ -233,25 +233,19 @@ export const INFINITIVE_PAIRS: MatchPair[] = [
 export const STORIES = {
   clinic: {
     title: 'A Visit to the Clinic',
-    text: `One sunny morning, George woke up feeling very sick. He had a hot, red face and a high temperature. "Oh dear," said his mother, "you have a fever." She touched his chest and felt his very sore throat. George started to cough, and a painful headache made him stay in bed.
+    text: `George woke up with a high temperature, fever, and a sore throat. His mother took him to Greenwood Health Center.
 
-"We must visit the Greenwood Health Center," his mother said. At the clinic, Nurse Angela was very kind. She took a thermometer from her bag to check George’s temperature. It showed 39°C. After a few minutes, Doctor Jennifer Sanders came into the room to do a complete check-up. 
+Nurse Angela kindly used a thermometer to check his temperature, which was 39°C. Doctor Jennifer Sanders did a check-up and diagnosed: "It's a common flu."
 
-"Open your mouth and show me your sore throat," she instructed. She examined George and noticed a small red cut on his arm too. "It’s a common flu," the doctor diagnosed nicely. She sat down at her table to write a Doctor's Report. 
-
-"You should stay in bed for three days, and you should drink plenty of fresh water," Doctor Sanders advised. "You shouldn't go outside to school until you feel completely better. And please, use this soothing cream to make the cut heal." George's mother was happy. She took the written prescription to buy some round yellow pills. George took one pill twice a day after meals, rested in bed, and soon felt healthy again!`
+Doctor Sanders advised: "You should stay in bed and drink water. You shouldn't go outside to school." She wrote a prescription for pills. George took one pill twice a day after meals and soon felt healthy!`
   },
   lost: {
     title: "Who's Lost?",
-    text: `Yong and Meili were very excited about their weekend visit to the theme park with Uncle Bohai. The weather was perfect and they could hear children laughing on the roller coaster. First, they went to ride the Ferris wheel. From the top of the wheel, Meili saw the giant colorful bumper cars.
+    text: `Yong and Meili were very excited about visiting the theme park with Uncle Bohai. After riding the Ferris wheel, they sat down to eat. Uncle Bohai bought popcorn for Yong and a hot dog for Meili.
 
-"Let’s eat some snacks first," suggested Uncle Bohai. He walked to a food stall to buy a box of popcorn for Yong and a hot dog for Meili. Near the stall, they sat at an outdoor café to eat. Five minutes later, Meili saw a beautiful butterfly and followed it without asking permission. Suddenly, the café looked empty and Meili was nowhere to be found!
+While eating, Meili saw a beautiful butterfly and followed it without asking permission. Soon, Meili was lost!
 
-"Where is your sister?" Uncle Bohai asked Yong, feeling highly worried about her. Yong stood up on a bench to look around, but the theme park was crowded and busy. They decided to look near the rides. While walking, Yong saw a green hat lying on the floor near the bumper cars. 
-
-"Look, Uncle! That is Meili's favorite green hat with yellow flowers!" Yong screamed loudly. Uncle Bohai ran quickly towards the Lost Property Office. When they opened the door, they saw Meili safe and happy! She was drinking orange juice next to her school friend Yuyan. 
-
-"Where were you, Uncle Bohai?" Meili asked, laughing. "I was looking all over the park for you! You were lost!" Uncle Bohai hugged her. "Be responsible next time and ask before you walk away!" he said, and Meili promised she would.`
+Searching the park, Yong found Meili's favorite green hat with yellow flowers near the bumper cars. They ran to the Lost Property Office. Inside, they found Meili safe, drinking orange juice with her friend Yuyan!`
   }
 };
 

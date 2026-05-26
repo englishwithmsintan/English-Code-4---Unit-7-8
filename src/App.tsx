@@ -515,6 +515,12 @@ export default function App() {
         <div className="max-w-7xl mx-auto px-4 leading-relaxed font-bold">
           <p className="uppercase tracking-wide">Tunas Iblam Elementary School English Academy · Revision Hub</p>
           <p className="mt-1.5 text-[11px] text-slate-500 font-mono font-medium">Academic Year 2025/2026 · Compiled Grade 4 Review Terminal</p>
+          <div className="mt-3.5 pt-3.5 border-t-2 border-dashed border-slate-200 flex flex-col items-center justify-center gap-1.5">
+            <span className="text-[10px] uppercase font-mono tracking-widest text-indigo-600 font-black">Curriculum Developer & Lead Instructor</span>
+            <span className="text-xs sm:text-sm font-black text-slate-950 bg-amber-400 border-2 border-slate-900 px-3 py-1.5 rounded-xl shadow-[2px_2px_0px_0px_rgba(15,23,42,1)]">
+              👩‍🏫 Intan Fazillah, S.S.
+            </span>
+          </div>
         </div>
       </footer>
 

@@ -230,39 +230,64 @@ export default function SATMockExam({
 
       {/* Main Practice / Exam Area */}
       {examMode !== null && !examFinished && (
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 animate-fade-in">
           
-          {/* LEFT COLUMN: Passage (Only shown on Q1-5 and Q16-20 Reading Sections) */}
-          {(currentQuestion.category === 'reading-clinic' || currentQuestion.category === 'reading-lost') ? (
-            <div className="lg:col-span-4 bg-white border-4 border-slate-900 p-6 rounded-[32px] h-[36rem] overflow-y-auto shadow-[4px_4px_0px_0px_#0f172a]">
-              <span className="p-1 px-3 bg-indigo-100 text-indigo-700 border-2 border-slate-900 text-[10px] rounded-full font-black uppercase tracking-wider font-mono block mb-3 w-fit">
-                {currentQuestion.category === 'reading-clinic' ? 'Passage 1 Context 🩺' : 'Passage 2 Context 🎪'}
-              </span>
-              
-              <h4 className="text-base font-black text-slate-900 mb-3 tracking-tight uppercase">
-                {currentQuestion.category === 'reading-clinic' ? STORIES.clinic.title : STORIES.lost.title}
-              </h4>
-              <p className="text-xs sm:text-xs text-slate-700 leading-relaxed font-bold whitespace-pre-wrap select-text border-t border-slate-200 pt-3">
-                {currentQuestion.category === 'reading-clinic' ? STORIES.clinic.text : STORIES.lost.text}
-              </p>
-            </div>
-          ) : (
-            <div className="lg:col-span-4 bg-[#fefaf0] border-4 border-slate-900 p-6 rounded-[32px] flex flex-col justify-between items-center text-center shadow-[4px_4px_0px_0px_#0f172a]">
-              <div className="text-center flex flex-col items-center justify-center flex-1">
-                <div className="text-5xl mb-4 p-2 bg-white rounded-2xl border-2 border-slate-900 shadow-[2px_2px_0px_0px_#000]">📋</div>
-                <h4 className="font-black text-slate-900 tracking-tight uppercase">Topic Review Stage</h4>
-                <p className="text-xs text-slate-600 leading-relaxed mt-2 max-w-xs font-bold">
-                  This grammar or dialogue scenario is derived directly from our Grade 4 classroom slide review sheets. Stay focused!
-                </p>
-              </div>
-              <div className="text-center w-full border-t-2 border-dashed border-slate-350 mt-6 pt-4 text-[10px] italic font-black text-slate-400 uppercase tracking-widest font-mono">
-                No active reading passage is required for this slide concept.
-              </div>
+          {/* LEFT COLUMN: Passage (Only shown on Q1-5 and Q16-20 Reading Sections, and Doctor's Report for True/False section) */}
+          {(currentQuestion.category === 'reading-clinic' || 
+            currentQuestion.category === 'reading-lost' || 
+            currentQuestion.category === 'true-false-medical') && (
+            <div className="lg:col-span-4 bg-white border-4 border-slate-900 p-4 sm:p-5 rounded-[24px] sm:rounded-[32px] h-[22rem] lg:h-[36rem] overflow-y-auto shadow-[4px_4px_0px_0px_#0f172a]">
+              {currentQuestion.category === 'true-false-medical' ? (
+                <div className="font-sans">
+                  <span className="p-1 px-3 bg-rose-100 text-rose-700 border-2 border-slate-900 text-[10px] rounded-full font-black uppercase tracking-wider font-mono block mb-3 w-fit">
+                    Medical Report Context 🩺
+                  </span>
+                  
+                  <h4 className="text-sm font-black text-slate-900 mb-3 tracking-tight uppercase">
+                    Grade 4 Clinic Report
+                  </h4>
+                  <div className="text-[11px] sm:text-xs space-y-3.5 text-slate-800 font-bold bg-slate-50 border-2 border-slate-900 p-4 rounded-xl shadow-[3px_3px_0px_0px_rgba(15,23,42,1)] leading-relaxed">
+                    <div>
+                      <p className="text-slate-400 font-mono text-[9px] uppercase tracking-wider">Patient Name:</p>
+                      <p className="text-slate-950 font-black text-xs uppercase bg-white border border-slate-300 rounded px-1.5 py-0.5 mt-0.5 w-fit">Ryan Gosling</p>
+                    </div>
+                    <div>
+                      <p className="text-slate-400 font-mono text-[9px] uppercase tracking-wider">Symptoms:</p>
+                      <p className="text-slate-950 font-extrabold mt-0.5">High temperature, sore throat, cough</p>
+                    </div>
+                    <div>
+                      <p className="text-slate-400 font-mono text-[9px] uppercase tracking-wider">Diagnosis:</p>
+                      <p className="text-slate-950 font-extrabold bg-[#ecfdf5] text-emerald-800 border-2 border-emerald-300 px-1.5 py-0.5 rounded font-black w-fit mt-0.5">Common Flu</p>
+                    </div>
+                    <div>
+                      <p className="text-slate-400 font-mono text-[9px] uppercase tracking-wider">Doctor's Advice:</p>
+                      <p className="text-slate-950 font-extrabold mt-0.5">Drink water · Stay in bed · Don’t go outside</p>
+                    </div>
+                    <div>
+                      <p className="text-slate-400 font-mono text-[9px] uppercase tracking-wider">Prescription:</p>
+                      <p className="text-indigo-700 font-black mt-0.5">One pill twice a day after meals</p>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <span className="p-1 px-3 bg-indigo-100 text-indigo-700 border-2 border-slate-900 text-[10px] rounded-full font-black uppercase tracking-wider font-mono block mb-3 w-fit">
+                    {currentQuestion.category === 'reading-clinic' ? 'Passage 1 Context 🩺' : 'Passage 2 Context 🎪'}
+                  </span>
+                  
+                  <h4 className="text-base font-black text-slate-900 mb-3 tracking-tight uppercase">
+                    {currentQuestion.category === 'reading-clinic' ? STORIES.clinic.title : STORIES.lost.title}
+                  </h4>
+                  <p className="text-xs sm:text-xs text-slate-700 leading-relaxed font-bold whitespace-pre-wrap select-text border-t border-slate-200 pt-3">
+                    {currentQuestion.category === 'reading-clinic' ? STORIES.clinic.text : STORIES.lost.text}
+                  </p>
+                </>
+              )}
             </div>
           )}
 
           {/* RIGHT COLUMN: Question MCQ panel */}
-          <div className="lg:col-span-8 bg-white border-4 border-slate-900 shadow-[8px_8px_0px_0px_#0f172a] rounded-[32px] p-6 flex flex-col justify-between min-h-[36rem]">
+          <div className={`${(currentQuestion.category === 'reading-clinic' || currentQuestion.category === 'reading-lost' || currentQuestion.category === 'true-false-medical') ? 'lg:col-span-8' : 'lg:col-span-12'} bg-white border-4 border-slate-900 shadow-[8px_8px_0px_0px_#0f172a] rounded-[24px] sm:rounded-[32px] p-5 sm:p-6 flex flex-col justify-between min-h-[28rem] lg:min-h-[36rem]`}>
             
             {/* Top Tracker Info bar */}
             <div>

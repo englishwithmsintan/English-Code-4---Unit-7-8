@@ -351,13 +351,13 @@ export default function ClassroomGames({
   ];
 
   return (
-    <div className="max-w-6xl mx-auto px-4 py-4 grid grid-cols-1 lg:grid-cols-4 gap-8">
+    <div className="max-w-6xl mx-auto px-4 py-4 grid grid-cols-1 lg:grid-cols-4 gap-6 lg:gap-8">
       
       {/* Side menu selection */}
-      <div className="lg:col-span-1 bg-white text-slate-900 rounded-[32px] p-5 shadow-[4px_4px_0px_0px_#0f172a] border-4 border-slate-900 flex flex-col justify-between">
+      <div className="lg:col-span-1 bg-white text-slate-900 rounded-[24px] lg:rounded-[32px] p-4 lg:p-5 shadow-[4px_4px_0px_0px_#0f172a] border-4 border-slate-900 flex flex-col justify-between">
         <div>
-          <h3 className="text-xs font-black font-mono text-purple-600 uppercase tracking-widest mb-4">Class Arcade Selection</h3>
-          <div className="flex flex-col gap-2.5">
+          <h3 className="text-xs font-black font-mono text-indigo-600 uppercase tracking-widest mb-3 lg:mb-4">Class Arcade Selection</h3>
+          <div className="grid grid-cols-2 sm:grid-cols-5 lg:flex lg:flex-col gap-2">
             {classTitles.map(game => (
               <button
                 key={game.id}
@@ -365,10 +365,10 @@ export default function ClassroomGames({
                   setActiveGame(game.id as any);
                   sound.playClick();
                 }}
-                className={`w-full py-3.5 px-4 rounded-xl text-left text-xs sm:text-xs font-black transition-all cursor-pointer border-2 ${
+                className={`py-2 lg:py-3 px-2 lg:px-4 rounded-xl text-center lg:text-left text-[10px] sm:text-xs font-black transition-all cursor-pointer border-2 ${
                   activeGame === game.id
-                    ? 'bg-amber-400 border-slate-900 text-slate-950 shadow-[2px_2px_0px_0px_#000]'
-                    : 'bg-white border-slate-305 text-slate-700 hover:border-slate-900'
+                    ? 'bg-amber-400 border-slate-900 text-slate-950 shadow-[1.5px_1.5px_0px_0px_#000] lg:shadow-[2px_2px_0px_0px_#000]'
+                    : 'bg-white border-slate-300 text-slate-700 hover:border-slate-900 hover:bg-slate-50'
                 }`}
               >
                 {game.label}
@@ -378,7 +378,7 @@ export default function ClassroomGames({
         </div>
 
         {/* Scoring board */}
-        <div className="mt-8 pt-6 border-t-2 border-slate-200">
+        <div className="mt-4 lg:mt-8 pt-3 lg:pt-6 border-t-2 border-slate-200">
           <h4 className="text-xs font-black uppercase tracking-widest text-[#b45309] mb-4 flex items-center justify-between font-mono">
             <span>🏆 Team Scoreboard</span>
             <Trophy className="h-4 w-4 text-[#b45309] animate-pulse" />
