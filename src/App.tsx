@@ -178,38 +178,38 @@ export default function App() {
   const agendaItems = [
     {
       id: 'agenda-u7',
-      title: 'Unit 7 Review: Health & Medical 🩺',
-      desc: 'Master illnesses (sore throat, cholera) and medical equipment (thermometer, bandage).',
+      title: 'Unit 7 Review: Doctor & Health 🩺',
+      desc: 'Learn words for being sick (cough, fever) and helper tools (thermometer, pills)!',
       tab: 'flashcards-u7',
       difficulty: 'Grade 4 Core'
     },
     {
       id: 'agenda-u8',
-      title: 'Unit 8 Review: Theme Parks & Feelings 🎢',
-      desc: 'Study theme park rides, snacking names, and matching preposition pairs.',
+      title: 'Unit 8 Review: Theme Parks & Fun 🎢',
+      desc: 'Learn words about fun rides, tasty snacks, and how you feel!',
       tab: 'flashcards-u8',
       difficulty: 'Grade 4 Core'
     },
     {
       id: 'agenda-grammar',
-      title: 'Grammar Labs Focus ⚖️',
-      desc: 'Solve Should/Shouldn’t advisors, Infinitive of Purpose, and Past/Present/Future timelines.',
+      title: 'Grammar Practice Labs ⚙️',
+      desc: 'Practice when to use should/shouldn\'t, past words, and giving reasons!',
       tab: 'grammar',
-      difficulty: 'Grammar Heavy'
+      difficulty: 'Grammar'
     },
     {
       id: 'agenda-games',
-      title: 'Play Gamified Classroom Arcades 🎮',
-      desc: 'Dodge incorrect buzzer choices in Kahoot, Spin the Wheel, and guess inside Hot Seat!',
+      title: 'Fun Classroom Games 🎮',
+      desc: 'Play T/F Showdown, Kahoot, and the Hot Seat game with your classmates!',
       tab: 'arcade',
-      difficulty: 'Interactive Practice'
+      difficulty: 'Games'
     },
     {
       id: 'agenda-testprep',
-      title: 'Final SAT Practice Simulator 📝',
-      desc: 'Simulate the exact 40-question mock exam to score an A+ report card before finals!',
+      title: 'Mock SAT Test 📝',
+      desc: 'Try this 40-question practice exam to prepare for your school exam!',
       tab: 'mock-sat',
-      difficulty: 'Practice SAT Standard'
+      difficulty: 'Practice Test'
     }
   ];
 
@@ -263,7 +263,7 @@ export default function App() {
                     <p className="text-sm text-slate-100 mt-3 max-w-xl leading-relaxed font-medium">
                       {genAlphaMode
                         ? "Prepare for maximum points with 100% aura! Study Unit 7 & 8 with peak rizz. Infinite cooking zone, no cap, real sigmas solo the test! 📈 fr fr"
-                        : "Welcome to your high-fidelity classroom study terminal! This environment compiles vocabulary words, grammar, scenarios, and gamified testing modeled nicely after your review materials."}
+                        : "Welcome to your fun classroom study hub! This website helps you practice your vocabulary, grammar, and stories for your upcoming English test."}
                     </p>
                   </div>
                   
@@ -292,7 +292,7 @@ export default function App() {
                         <span className="bg-emerald-400 text-slate-950 px-2 py-0.5 rounded text-[10px] border-2 border-slate-900 font-black">{masteryPercent}%</span>
                       </div>
                       <p className="text-xs text-slate-700 leading-relaxed font-medium">
-                        Complete vocabulary flashcards and practice SAT trials to fill up your progress meter and collect school stamps!
+                        Complete your flashcard reviews and mock SAT tests to fill your progress and collect cool school stamps!
                       </p>
                     </div>
                   )}
@@ -392,13 +392,13 @@ export default function App() {
                             <strong>Remember to + verb:</strong> We use a medical thermometer <span className="underline font-bold bg-white px-1">TO TAKE</span> our temperature.
                           </li>
                           <li>
-                            <strong>Should vs Shouldn't:</strong> Use shouldn't for bad medical advice like "eating dirty food" or "drinking ice".
+                            <strong>Should vs Shouldn't:</strong> Use <span className="underline font-bold bg-white px-1">shouldn't</span> for bad choices like "eating dirty food" or "drinking ice".
                           </li>
                           <li>
-                            <strong>Preposition Match:</strong> excited / worried <span className="underline font-bold text-indigo-700 bg-white px-1">ABOUT</span>, scared <span className="underline font-bold text-indigo-700 bg-white px-1">OF</span>, interested <span className="underline font-bold text-indigo-700 bg-white px-1">IN</span>.
+                            <strong>Preposition Match:</strong> excited/worried <span className="underline font-bold text-indigo-700 bg-white px-1">ABOUT</span>, scared <span className="underline font-bold text-indigo-700 bg-white px-1">OF</span>, interested <span className="underline font-bold text-indigo-700 bg-white px-1">IN</span>.
                           </li>
                           <li>
-                            <strong>Past Words:</strong> <span className="italic font-bold">yesterday / last Sunday</span> calls for Past Verb like <em>went</em> or <em>rode</em>.
+                            <strong>Past Words:</strong> <span className="italic font-bold">yesterday / last Sunday</span> needs past verbs like <em>went</em> or <em>rode</em>.
                           </li>
                         </>
                       )}
